@@ -1,6 +1,14 @@
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { FC, useEffect, useState } from "react";
+import React, {
+  Dispatch,
+  FC,
+  SetStateAction,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
+import { DefaultTheme, ThemeContext } from "styled-components";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import {
   Brand,
@@ -11,19 +19,23 @@ import {
   SectionButtonsWrapper,
   MenuButton,
   MenuMain,
+  NavbarWrapper,
 } from "./styled";
-
-const Navbar: FC = () => {
+import themes from "../../themes/schema.json";
+const Navbar: FC<{
+  setSelectedTheme: Dispatch<SetStateAction<DefaultTheme>>;
+}> = ({ setSelectedTheme }) => {
   const { width } = useWindowDimensions();
+  const theme = useContext(ThemeContext);
   const [menuOn, setMenuOn] = useState(false);
   useEffect(() => {
-    var prevScrollpos = window.pageYOffset;
+    let prevScrollpos = window.pageYOffset;
     window.onscroll = function () {
-      var currentScrollPos = window.pageYOffset;
+      let currentScrollPos = window.pageYOffset;
       if (prevScrollpos > currentScrollPos) {
         (document.getElementById("navbar") as any).style.top = "0";
       } else {
-        (document.getElementById("navbar") as any).style.top = "-50px";
+        (document.getElementById("navbar") as any).style.top = "-150px";
       }
       prevScrollpos = currentScrollPos;
     };
@@ -31,9 +43,15 @@ const Navbar: FC = () => {
   const toggleMenu = () => {
     setMenuOn(!menuOn);
   };
-
+  const toggleTheme = () => {
+    if (theme.name === "light") {
+      setSelectedTheme(themes.dark);
+    } else {
+      setSelectedTheme(themes.light);
+    }
+  };
   return (
-    <div id="navbar">
+    <NavbarWrapper id="navbar">
       <MainDiv>
         <Brand>{"<CSA/>"}</Brand>
         <RightDiv>
@@ -44,7 +62,7 @@ const Navbar: FC = () => {
             <SectionButton>{"[3]Education"}</SectionButton>
             <SectionButton>{"[4]Contact"}</SectionButton>
           </SectionButtonsWrapper>
-          <ToggleThemeButton>theme</ToggleThemeButton>
+          <ToggleThemeButton onClick={toggleTheme}>theme</ToggleThemeButton>
           <MenuButton onClick={toggleMenu}>
             <FontAwesomeIcon icon={faBars} />
           </MenuButton>
@@ -59,7 +77,7 @@ const Navbar: FC = () => {
           <SectionButton>{"[4]Contact"}</SectionButton>
         </MenuMain>
       )}
-    </div>
+    </NavbarWrapper>
   );
 };
 

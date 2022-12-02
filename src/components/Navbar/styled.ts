@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const NavbarWrapper = styled("div")`
+  position: sticky;
+  top: 0;
+  transition: 500ms;
+`;
+
 export const MainDiv = styled("div")`
   height: auto;
   background: ${({ theme }) => theme.colors.primaryMain};
@@ -85,6 +91,6 @@ export const MenuButton = styled("button")`
 
 export const MenuMain = styled("div")`
   display: flex;
-  padding:10px;
+  padding: 10px;
   flex-direction: column;
 `;
