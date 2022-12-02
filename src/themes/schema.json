@@ -22,10 +22,10 @@
             "primaryHover": "",
             "secondaryMain": "white",
             "secondarySub": "",
-            "secondaryHover": "",
+            "secondaryHover": "#f0f0f0",
             "tertiaryMain": "#AAFF83",
             "tertiarySub": "",
-            "tertiaryHover": "",
+            "tertiaryHover": "#D3FFBE",
             "tertiaryOverlay": ""
         }
     }
