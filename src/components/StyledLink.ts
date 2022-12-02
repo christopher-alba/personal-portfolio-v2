@@ -15,9 +15,15 @@ export const StyledLink = styled("a")`
     background-color: ${({ theme }) => theme.colors.tertiaryMain};
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
+    @media (max-width: 800px) {
+      display: none;
+    }
   }
   &:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+    @media (max-width: 800px) {
+      display: none;
+    }
   }
 `;

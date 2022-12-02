@@ -94,4 +94,5 @@ export const MenuMain = styled("div")`
   display: flex;
   padding: 10px;
   flex-direction: column;
+  background: ${({ theme }) => theme.colors.primaryMain};
 `;
