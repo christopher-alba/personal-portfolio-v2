@@ -35,7 +35,7 @@ const Navbar: FC<{
       if (prevScrollpos > currentScrollPos) {
         (document.getElementById("navbar") as any).style.top = "0";
       } else {
-        (document.getElementById("navbar") as any).style.top = "-150px";
+        (document.getElementById("navbar") as any).style.top = "-200px";
       }
       prevScrollpos = currentScrollPos;
     };
