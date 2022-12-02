@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./themes/globalStyles";
 import Navbar from "./components/Navbar";
 import About from "./sections/About";
+import Landing from "./sections/Landing";
 
 const App = () => {
   const [selectedTheme, setSelectedTheme] = useState(themes.dark);
@@ -12,6 +13,7 @@ const App = () => {
     <ThemeProvider theme={selectedTheme}>
       <GlobalStyles />
       <Navbar setSelectedTheme={setSelectedTheme} />
+      <Landing />
       <About />
     </ThemeProvider>
   );

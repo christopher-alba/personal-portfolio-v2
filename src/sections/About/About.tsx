@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
 const About: FC = () => {
-  return <div style={{ height: "300vh" }}>Hello There</div>;
+  return <div>Hello There</div>;
 };
 export default About;
