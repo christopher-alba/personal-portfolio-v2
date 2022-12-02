@@ -1,0 +1,32 @@
+{
+    "light": {
+        "name": "light",
+        "colors": {
+            "primaryMain": "",
+            "primarySub": "",
+            "primaryHover": "",
+            "secondaryMain": "",
+            "secondarySub": "",
+            "secondaryHover": "",
+            "tertiaryMain": "",
+            "tertiarySub": "",
+            "tertiaryHover": "",
+            "tertiaryOverlay": ""
+        }
+    },
+    "dark": {
+        "name": "dark",
+        "colors": {
+            "primaryMain": "#000C24",
+            "primarySub": "",
+            "primaryHover": "",
+            "secondaryMain": "white",
+            "secondarySub": "",
+            "secondaryHover": "",
+            "tertiaryMain": "#AAFF83",
+            "tertiarySub": "",
+            "tertiaryHover": "",
+            "tertiaryOverlay": ""
+        }
+    }
+}
