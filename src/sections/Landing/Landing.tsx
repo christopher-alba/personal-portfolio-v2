@@ -15,7 +15,7 @@ import {
 import { Link } from "react-router-dom";
 const Landing: FC = () => {
   return (
-    <MainDiv>
+    <MainDiv id="landing">
       <StyledContainer>
         <ContentDiv>
           <IntroText>Hi! Thanks for visisting, my name is</IntroText>

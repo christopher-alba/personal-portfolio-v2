@@ -50,17 +50,55 @@ const Navbar: FC<{
       setSelectedTheme(themes.light);
     }
   };
+  const scrollToLanding = () => {
+    document.getElementById("landing")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+  const scrollToAbout = () => {
+    document.getElementById("about")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+  const scrollToJourney = () => {
+    document.getElementById("journey")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+  const scrollToProjects = () => {
+    document.getElementById("projects")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+  const scrollToEducation = () => {
+    document.getElementById("education")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+  const scrollToContact = () => {
+    document.getElementById("contact")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
   return (
     <NavbarWrapper id="navbar">
       <MainDiv>
-        <Brand>{"<CSA/>"}</Brand>
+        <Brand onClick={scrollToLanding}>{"<CSA/>"}</Brand>
         <RightDiv>
           <SectionButtonsWrapper>
-            <SectionButton>{"[0]About"}</SectionButton>
-            <SectionButton>{"[1]Journey"}</SectionButton>
-            <SectionButton>{"[2]Projects"}</SectionButton>
-            <SectionButton>{"[3]Education"}</SectionButton>
-            <SectionButton>{"[4]Contact"}</SectionButton>
+            <SectionButton onClick={scrollToAbout}>{"[0]About"}</SectionButton>
+            <SectionButton onClick={scrollToJourney}>
+              {"[1]Journey"}
+            </SectionButton>
+            <SectionButton onClick={scrollToProjects}>
+              {"[2]Projects"}
+            </SectionButton>
+            <SectionButton onClick={scrollToEducation}>
+              {"[3]Education"}
+            </SectionButton>
+            <SectionButton onClick={scrollToContact}>
+              {"[4]Contact"}
+            </SectionButton>
           </SectionButtonsWrapper>
           <ToggleThemeButton onClick={toggleTheme}>theme</ToggleThemeButton>
           <MenuButton onClick={toggleMenu}>
@@ -70,11 +108,19 @@ const Navbar: FC<{
       </MainDiv>
       {menuOn && width <= 1300 && (
         <MenuMain>
-          <SectionButton>{"[0]About"}</SectionButton>
-          <SectionButton>{"[1]Journey"}</SectionButton>
-          <SectionButton>{"[2]Projects"}</SectionButton>
-          <SectionButton>{"[3]Education"}</SectionButton>
-          <SectionButton>{"[4]Contact"}</SectionButton>
+          <SectionButton onClick={scrollToAbout}>{"[0]About"}</SectionButton>
+          <SectionButton onClick={scrollToJourney}>
+            {"[1]Journey"}
+          </SectionButton>
+          <SectionButton onClick={scrollToProjects}>
+            {"[2]Projects"}
+          </SectionButton>
+          <SectionButton onClick={scrollToEducation}>
+            {"[3]Education"}
+          </SectionButton>
+          <SectionButton onClick={scrollToContact}>
+            {"[4]Contact"}
+          </SectionButton>
         </MenuMain>
       )}
     </NavbarWrapper>
