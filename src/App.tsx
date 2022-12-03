@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import About from "./sections/About";
 import Landing from "./sections/Landing";
 import SocialLinks from "./components/SocialLinks";
+import Journey from "./sections/Journey";
 
 const App = () => {
   const [selectedTheme, setSelectedTheme] = useState(themes.dark);
@@ -17,6 +18,7 @@ const App = () => {
       <SocialLinks />
       <Landing />
       <About />
+      <Journey />
     </ThemeProvider>
   );
 };

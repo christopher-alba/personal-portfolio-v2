@@ -18,7 +18,7 @@
         "name": "dark",
         "colors": {
             "primaryMain": "#000C24",
-            "primarySub": "",
+            "primarySub": "#1C1C1C",
             "primaryHover": "",
             "secondaryMain": "white",
             "secondarySub": "#c7c7c7",
