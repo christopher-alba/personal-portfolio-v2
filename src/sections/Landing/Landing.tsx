@@ -24,7 +24,7 @@ const Landing: FC = () => {
       <StyledContainer>
         <ContentDiv>
           <IntroText>Hi! Thanks for visisting, my name is</IntroText>
-          <NameText>Christopher Sy Alba</NameText>
+          <NameText>Christopher Sy Alba.</NameText>
           <SubText>
             <strong>Web Development</strong> <ThinText>specialist</ThinText>
           </SubText>
