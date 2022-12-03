@@ -5,6 +5,7 @@ export const NavbarWrapper = styled("div")`
   width: 100%;
   top: 0;
   transition: 500ms;
+  z-index: 1000;
 `;
 
 export const MainDiv = styled("div")`
