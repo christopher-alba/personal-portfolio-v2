@@ -66,11 +66,14 @@ export const ToggleThemeButton = styled("button")`
   border: 2px solid ${({ theme }) => theme.colors.secondaryMain};
   padding: 10px 20px;
   border-radius: 10px;
-  margin-right:30px;
+  margin-right: 30px;
   cursor: pointer;
   &:hover {
     background: ${({ theme }) => theme.colors.secondaryHover};
     color: ${({ theme }) => theme.colors.primaryMain};
+  }
+  @media (max-width: 1300px) {
+    margin-right: 0;
   }
 `;
 
@@ -89,6 +92,10 @@ export const MenuButton = styled("button")`
   }
   @media (max-width: 1300px) {
     display: block;
+    margin-right: 20px;
+  }
+  @media (max-width: 500px) {
+    margin-right: 0;
   }
 `;
 
