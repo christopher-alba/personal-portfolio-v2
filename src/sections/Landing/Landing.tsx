@@ -14,6 +14,11 @@ import {
 } from "./styled";
 import { Link } from "react-router-dom";
 const Landing: FC = () => {
+  const learnMore = () => {
+    document.getElementById("about")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
   return (
     <MainDiv id="landing">
       <StyledContainer>
@@ -52,7 +57,7 @@ const Landing: FC = () => {
             >
               <TertiaryButton tabIndex={-1}>download CV</TertiaryButton>
             </Link>
-            <PlainButton>learn more first</PlainButton>
+            <PlainButton onClick={learnMore}>learn more first</PlainButton>
           </ButtonsWrapper>
         </ContentDiv>
       </StyledContainer>

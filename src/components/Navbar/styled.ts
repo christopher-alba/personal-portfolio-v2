@@ -66,6 +66,7 @@ export const ToggleThemeButton = styled("button")`
   border: 2px solid ${({ theme }) => theme.colors.secondaryMain};
   padding: 10px 20px;
   border-radius: 10px;
+  margin-right:30px;
   cursor: pointer;
   &:hover {
     background: ${({ theme }) => theme.colors.secondaryHover};

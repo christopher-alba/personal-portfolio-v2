@@ -50,7 +50,7 @@ const Turners: FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <TertiaryButton>Visit Company Website</TertiaryButton>
+          <TertiaryButton tabIndex={-1}>Visit Company Website</TertiaryButton>
         </StyledAnchor>
       </HeaderDiv>
       <Date>June 2022 - Present</Date>
@@ -95,7 +95,7 @@ const Henry: FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <TertiaryButton>Visit Company Website</TertiaryButton>
+          <TertiaryButton tabIndex={-1}>Visit Company Website</TertiaryButton>
         </StyledAnchor>
       </HeaderDiv>
       <Date>November 2021 - February 2022 (400 hours)</Date>
@@ -169,7 +169,7 @@ const Jasper: FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <TertiaryButton>Visit Company Website</TertiaryButton>
+          <TertiaryButton tabIndex={-1}>Visit Company Website</TertiaryButton>
         </StyledAnchor>
       </HeaderDiv>
       <Date>November 2020 - February 2021 (416 hours)</Date>
@@ -263,7 +263,7 @@ const EDA: FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <TertiaryButton>Visit Company Website</TertiaryButton>
+          <TertiaryButton tabIndex={-1}>Visit Company Website</TertiaryButton>
         </StyledAnchor>
       </HeaderDiv>
       <Date>March 2020 - June 2020 (800 hours)</Date>

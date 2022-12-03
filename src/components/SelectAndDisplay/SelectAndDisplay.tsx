@@ -61,6 +61,7 @@ const SelectAndDisplay: FC<{ optionsAndContents: OptionsAndContents }> = ({
             } else {
               return (
                 <OptionDiv
+                  tabIndex={0}
                   id={option.name}
                   onClick={() => {
                     changeID(option.name);
