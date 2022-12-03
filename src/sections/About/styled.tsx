@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const MainDiv = styled("div")`
   display: flex;
   align-items: center;
-  margin: 100px 0;
+  padding: 100px 0;
 `;
 
 const StyledImg = styled("img")`

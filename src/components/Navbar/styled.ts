@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const NavbarWrapper = styled("div")`
   position: fixed;
-  width: 100%;
+  width: 100vw;
   top: 0;
   transition: 500ms;
   z-index: 1000;

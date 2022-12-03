@@ -2,15 +2,15 @@
     "light": {
         "name": "light",
         "colors": {
-            "primaryMain": "",
-            "primarySub": "",
+            "primaryMain": "white",
+            "primarySub": "#f5f5f5",
             "primaryHover": "",
-            "secondaryMain": "",
-            "secondarySub": "",
-            "secondaryHover": "",
-            "tertiaryMain": "",
+            "secondaryMain": "black",
+            "secondarySub": "#454545",
+            "secondaryHover": "#2e2e2e",
+            "tertiaryMain": "blue",
             "tertiarySub": "",
-            "tertiaryHover": "",
+            "tertiaryHover": "#2167ff",
             "tertiaryOverlay": ""
         }
     },
