@@ -5,12 +5,12 @@
             "primaryMain": "white",
             "primarySub": "#f5f5f5",
             "primaryHover": "",
-            "secondaryMain": "black",
+            "secondaryMain": "darkblue",
             "secondarySub": "#454545",
             "secondaryHover": "#2e2e2e",
-            "tertiaryMain": "blue",
+            "tertiaryMain": "orange",
             "tertiarySub": "",
-            "tertiaryHover": "#2167ff",
+            "tertiaryHover": "brown",
             "tertiaryOverlay": ""
         }
     },

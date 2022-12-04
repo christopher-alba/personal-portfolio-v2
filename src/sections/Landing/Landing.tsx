@@ -51,6 +51,7 @@ const Landing: FC = () => {
           <ButtonsWrapper>
             <Link
               to="./cv.pdf"
+              download
               target="_blank"
               rel="noreferrer"
               style={{ marginRight: "10px" }}
