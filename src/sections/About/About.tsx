@@ -33,7 +33,7 @@ const About: FC = () => {
           backend also allows me to use my creativity to come up with
           solutions.Therefore,{" "}
           <Emphasise>
-            I am also open to working in the backend or fullstack roles.
+            I am also interested in backend or fullstack roles.
           </Emphasise>
         </Text>
       </Container>
