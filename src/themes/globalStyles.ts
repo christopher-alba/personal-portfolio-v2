@@ -9,7 +9,10 @@ export const GlobalStyles = createGlobalStyle`
     background-size: cover;
     background-attachment: fixed;
     color: ${({ theme }) => theme.colors.secondaryMain} !important;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Open Sans', 'Inter', sans-serif;
+    & button{
+      font-family: 'Open Sans', 'Inter', sans-serif;
+    }
     margin:0;
     &::-webkit-scrollbar-track
     {
@@ -51,5 +54,9 @@ export const GlobalStyles = createGlobalStyle`
           }};;
           border-radius:10px;
       }
+  }
+  button {
+    font-family: 'Inter', sans-serif;
+    text-transform: capitalize;
   }
 `;

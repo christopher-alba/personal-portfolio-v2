@@ -25,7 +25,6 @@ export const Brand = styled("button")`
   background: none;
   border: none;
   font-size: 1.5rem;
-  font-family: "Courier";
   cursor: pointer;
 `;
 
@@ -48,7 +47,6 @@ export const SectionButton = styled("button")`
   background: none;
   border: none;
   font-size: 0.8rem;
-  font-family: "Courier";
   cursor: pointer;
   margin-right: 30px;
   &:hover {
