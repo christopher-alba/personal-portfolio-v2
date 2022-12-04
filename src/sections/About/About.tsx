@@ -1,13 +1,25 @@
 import React, { FC } from "react";
 import { Container } from "../../components/Container";
 import SectionTitle from "../../components/SectionTitle";
-import { Emphasise, MainDiv, ProfilePicture, Text } from "./styled";
+import {
+  Emphasise,
+  ImgBackdrop,
+  ImgWrapper,
+  MainDiv,
+  StyledHR,
+  StyledImg,
+  Text,
+} from "./styled";
 
 const About: FC = () => {
   return (
     <MainDiv id="about">
       <Container>
-        <ProfilePicture imgURL="./profileImage.png" />
+        <StyledHR />
+        <ImgWrapper>
+          <StyledImg src="./profileImage.png" />
+          <ImgBackdrop />
+        </ImgWrapper>
         <SectionTitle number={0} title="About me" />
         <Text>
           From a young age I’ve enjoyed design and problem solving. Fast forward
