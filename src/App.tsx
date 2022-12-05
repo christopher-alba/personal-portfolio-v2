@@ -7,6 +7,7 @@ import About from "./sections/About";
 import Landing from "./sections/Landing";
 import SocialLinks from "./components/SocialLinks";
 import Journey from "./sections/Journey";
+import Projects from "./sections/Projects";
 
 const App = () => {
   const [selectedTheme, setSelectedTheme] = useState(themes.dark);
@@ -19,6 +20,7 @@ const App = () => {
       <Landing />
       <About />
       <Journey />
+      <Projects />
     </ThemeProvider>
   );
 };
