@@ -2,12 +2,9 @@ import {
   faBookOpen,
   faCar,
   faDollarSign,
-  faGear,
-  faStar,
   faTooth,
 } from "@fortawesome/free-solid-svg-icons";
 import React, { FC } from "react";
-import { Link } from "react-router-dom";
 import BulletPointList from "../../components/BulletPointList";
 import { TertiaryButton } from "../../components/Button";
 import { Container } from "../../components/Container";
