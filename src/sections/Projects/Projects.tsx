@@ -17,6 +17,8 @@ import {
   StyledHR,
   SubTitle,
   TagsWrapper,
+  TagsWrapperOuter,
+  TagsWrapperWrapper,
 } from "./styled";
 import {
   faFolderClosed,
@@ -279,18 +281,18 @@ const Project: FC<{ project: Project }> = ({ project }) => {
         <a href={project.website} target="_blank" rel="noopener noreferrer">
           <TertiaryButton
             tabIndex={-1}
-            style={{ width: "100px", marginRight: "10px" }}
+            style={{ width: "100px", marginRight: "10px", marginTop: "10px" }}
           >
             Visit
           </TertiaryButton>
           {project.github.map((githubObj) => (
-            <a
-              href={githubObj.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ width: "100px", marginRight: "10px" }}
-            >
-              <PlainButton>
+            <a href={githubObj.url} target="_blank" rel="noopener noreferrer">
+              <PlainButton
+                style={{
+                  marginTop: "10px",
+                  marginRight: "10px",
+                }}
+              >
                 <FontAwesomeIcon
                   icon={faGithub}
                   style={{ marginRight: "10px" }}
@@ -301,19 +303,24 @@ const Project: FC<{ project: Project }> = ({ project }) => {
           ))}
         </a>
         <StyledHR />
-        <ProjectSubTitle>Technologies</ProjectSubTitle>
-        <TagsWrapper>
-          {project.tags.map((tag) => (
-            <TechPill>{tag}</TechPill>
-          ))}
-        </TagsWrapper>
-        <StyledHR />
-        <ProjectSubTitle>Devices</ProjectSubTitle>
-        <TagsWrapper>
-          {project.devices.map((device) => (
-            <TechPill>{device}</TechPill>
-          ))}
-        </TagsWrapper>
+        <TagsWrapperWrapper>
+          <TagsWrapperOuter>
+            <ProjectSubTitle>Technologies</ProjectSubTitle>
+            <TagsWrapper>
+              {project.tags.map((tag) => (
+                <TechPill>{tag}</TechPill>
+              ))}
+            </TagsWrapper>
+          </TagsWrapperOuter>
+          <TagsWrapperOuter>
+            <ProjectSubTitle>Devices</ProjectSubTitle>
+            <TagsWrapper>
+              {project.devices.map((device) => (
+                <TechPill>{device}</TechPill>
+              ))}
+            </TagsWrapper>
+          </TagsWrapperOuter>
+        </TagsWrapperWrapper>
       </ProjectDetailsWrapper>
     </ProjectMainDiv>
   );
