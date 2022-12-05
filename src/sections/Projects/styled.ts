@@ -19,7 +19,8 @@ export const ProjectImg = styled("img")`
   position: relative;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
 `;
 
 export const ProjectImgOverlay = styled("div")`
@@ -37,7 +38,7 @@ export const ProjectImgOverlay = styled("div")`
 
 export const ProjectImgWrapper = styled("div")`
   width: 100%;
-  height: 100%;
+  height: 50vh;
   position: relative;
   border-radius: 20px;
   overflow: hidden;
@@ -101,4 +102,19 @@ export const StyledHR = styled("hr")`
 export const TagsWrapper = styled("div")`
   display: flex;
   flex-wrap: wrap;
+`;
+
+export const TagsWrapperWrapper = styled("div")`
+  display: flex;
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
+`;
+
+export const TagsWrapperOuter = styled("div")`
+  flex-grow: 1;
+  width: 50%;
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `;
