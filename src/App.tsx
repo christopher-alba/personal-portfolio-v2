@@ -8,6 +8,7 @@ import Landing from "./sections/Landing";
 import SocialLinks from "./components/SocialLinks";
 import Journey from "./sections/Journey";
 import Projects from "./sections/Projects";
+import Footer from "./components/Footer";
 
 const App = () => {
   const [selectedTheme, setSelectedTheme] = useState(themes.dark);
@@ -21,6 +22,7 @@ const App = () => {
       <About />
       <Journey />
       <Projects />
+      <Footer />
     </ThemeProvider>
   );
 };
