@@ -80,7 +80,7 @@ const projects: Projects = [
     imgSrc: "/images/valkyrion.png",
     devices: [Devices.DESKTOP],
     year: 2022,
-    download: "./Valkyrion-ChristopherSyAlba.zip",
+    download: "https://drive.google.com/file/d/1J3sGEVvUePL1iojAf0bDioAhTXOHsmcy/view?usp=sharing",
     github: [
       {
         url: "https://github.com/christopher-alba/Valkyrion",
@@ -309,7 +309,7 @@ const Project: FC<{ project: Project }> = ({ project }) => {
           </a>
         )}
         {(project.download?.length || -1) > 0 && (
-          <a href={project.download} target="_blank" rel="noopener noreferrer" download>
+          <a href={project.download} target="_blank" rel="noopener noreferrer">
             <TertiaryButton
               tabIndex={-1}
               style={{ width: "100px", marginRight: "10px", marginTop: "10px" }}
