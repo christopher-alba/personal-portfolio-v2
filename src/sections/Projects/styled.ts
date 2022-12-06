@@ -26,6 +26,10 @@ export const ProjectImg = styled("img")`
 export const ProjectImgOverlay = styled("div")`
   width: 100%;
   height: 100%;
+  display:flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
   background: ${({ theme }) => theme.colors.tertiaryOverlay};
   position: absolute;
   top: 0;
@@ -59,6 +63,7 @@ export const ImgAnchorWrapper = styled("a")`
 export const ProjectTitle = styled("p")`
   font-size: 2rem;
   font-weight: 700;
+  color: ${({theme}) => theme.colors.primaryMain};
   margin-bottom: 0;
 `;
 

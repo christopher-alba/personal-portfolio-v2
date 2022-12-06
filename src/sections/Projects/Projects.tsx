@@ -248,13 +248,14 @@ const Project: FC<{ project: Project }> = ({ project }) => {
     <ProjectMainDiv>
       <ProjectImgWrapper>
         <ProjectImg src={project.imgSrc} />
-        <ProjectImgOverlay />
+        <ProjectImgOverlay>
+          <ProjectTitle>
+            {project.name} - {project.year}
+          </ProjectTitle>
+        </ProjectImgOverlay>
       </ProjectImgWrapper>
 
       <ProjectDetailsWrapper>
-        <ProjectTitle>
-          {project.name} - {project.year}
-        </ProjectTitle>
         <ProjectStatusWrapper>
           {project.status.map((status) => {
             let text = "";
