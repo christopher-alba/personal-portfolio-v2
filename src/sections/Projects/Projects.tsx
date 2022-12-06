@@ -55,7 +55,8 @@ type Project = {
   description: string;
   status: ProjectStatus[];
   type: ProjectType;
-  website: string;
+  website?: string;
+  download?: string;
   tags: string[];
   imgSrc: string;
   devices: Devices[];
@@ -70,10 +71,28 @@ type Projects = Project[];
 
 const projects: Projects = [
   {
+    name: "Valkyrion",
+    description:
+      "This is a top-down 3D shooter with WASD controls and left click to shoot. Very easy to play once you get use to it. I had plenty of features planned for this game and even planned a full release on steam mid 2023. However, I found myself not enoying it anymore and figured that it was no longer worth putting hours of work into each day. Hence, it's now available freely for the public!",
+    status: [ProjectStatus.FEATURED],
+    type: ProjectType.FRONTENDONLY,
+    tags: ["C#", "Unity", "Blender"],
+    imgSrc: "/images/valkyrion.png",
+    devices: [Devices.DESKTOP],
+    year: 2022,
+    download: "./Valkyrion-ChristopherSyAlba.zip",
+    github: [
+      {
+        url: "https://github.com/christopher-alba/Valkyrion",
+        type: ProjectType.FRONTENDONLY,
+      },
+    ],
+  },
+  {
     name: "2D SPACE SHOOTER",
     description:
       "Fight your way through infinite rounds and enemies in this classic style shooter.",
-    status: [ProjectStatus.ARCHIVED],
+    status: [ProjectStatus.FEATURED],
     type: ProjectType.FRONTENDONLY,
     website: "https://christopher-alba.github.io/galaga-clone/",
     tags: ["HTML", "CSS", "Javascript", "jQuery"],
@@ -91,7 +110,7 @@ const projects: Projects = [
     name: "SCIENTIFIC CALCULATOR",
     description:
       "Has the basic functionalities of a calculator as well as some extra features!",
-    status: [ProjectStatus.ARCHIVED],
+    status: [ProjectStatus.FEATURED],
     type: ProjectType.FRONTENDONLY,
     website: "https://christopher-alba.github.io/calculator/",
     tags: ["HTML", "CSS", "Javascript", "jQuery"],
@@ -108,7 +127,7 @@ const projects: Projects = [
   {
     name: "PVP CHESS",
     description: "A working chess game with computer assists.",
-    status: [ProjectStatus.ARCHIVED],
+    status: [ProjectStatus.FEATURED],
     type: ProjectType.FRONTENDONLY,
     website: "https://christopher-alba.github.io/chess/",
     tags: ["HTML", "CSS", "Javascript", "jQuery"],
@@ -125,7 +144,7 @@ const projects: Projects = [
   {
     name: "WHACK-A-MOLE",
     description: "Click on the moles as they appear to earn points!",
-    status: [ProjectStatus.ARCHIVED],
+    status: [ProjectStatus.FEATURED],
     type: ProjectType.FRONTENDONLY,
     website:
       "https://christopher-alba.github.io/javascript-carnival/whack-a-mole/whack-a-mole.html",
@@ -279,30 +298,42 @@ const Project: FC<{ project: Project }> = ({ project }) => {
           })}
         </ProjectStatusWrapper>
         <p>{project.description}</p>
-        <a href={project.website} target="_blank" rel="noopener noreferrer">
-          <TertiaryButton
-            tabIndex={-1}
-            style={{ width: "100px", marginRight: "10px", marginTop: "10px" }}
-          >
-            Visit
-          </TertiaryButton>
-          {project.github.map((githubObj) => (
-            <a href={githubObj.url} target="_blank" rel="noopener noreferrer">
-              <PlainButton
-                style={{
-                  marginTop: "10px",
-                  marginRight: "10px",
-                }}
-              >
-                <FontAwesomeIcon
-                  icon={faGithub}
-                  style={{ marginRight: "10px" }}
-                />
-                Github - {githubObj.type}
-              </PlainButton>
-            </a>
-          ))}
-        </a>
+        {(project.website?.length || -1) > 0 && (
+          <a href={project.website} target="_blank" rel="noopener noreferrer">
+            <TertiaryButton
+              tabIndex={-1}
+              style={{ width: "100px", marginRight: "10px", marginTop: "10px" }}
+            >
+              Visit
+            </TertiaryButton>
+          </a>
+        )}
+        {(project.download?.length || -1) > 0 && (
+          <a href={project.download} target="_blank" rel="noopener noreferrer" download>
+            <TertiaryButton
+              tabIndex={-1}
+              style={{ width: "100px", marginRight: "10px", marginTop: "10px" }}
+            >
+              Download
+            </TertiaryButton>
+          </a>
+        )}
+        {project.github.map((githubObj) => (
+          <a href={githubObj.url} target="_blank" rel="noopener noreferrer">
+            <PlainButton
+              style={{
+                marginTop: "10px",
+                marginRight: "10px",
+              }}
+            >
+              <FontAwesomeIcon
+                icon={faGithub}
+                style={{ marginRight: "10px" }}
+              />
+              Github - {githubObj.type}
+            </PlainButton>
+          </a>
+        ))}
         <StyledHR />
         <TagsWrapperWrapper>
           <TagsWrapperOuter>
@@ -346,13 +377,13 @@ const Projects: FC = () => {
           .map((project) => {
             return <Project project={project} />;
           })}
-        {/* <SubTitle>
+        <SubTitle>
           <FontAwesomeIcon
             icon={faThumbsUp}
             style={{ marginRight: "10px", fontSize: "2rem" }}
           />
-          Projects I'm Maintaining and Completed to an MVP
-        </SubTitle> */}
+          Old and New Projects That Still Work
+        </SubTitle>
         {projects
           .filter((project) => project.status.includes(ProjectStatus.FEATURED))
           .map((project) => {
@@ -363,7 +394,7 @@ const Projects: FC = () => {
             icon={faFolderClosed}
             style={{ marginRight: "10px", fontSize: "2rem" }}
           />
-          Projects I'm No Longer Working On
+          Old Projects No Longer Maintained
         </SubTitle>
         {projects
           .filter((project) => project.status.includes(ProjectStatus.ARCHIVED))
