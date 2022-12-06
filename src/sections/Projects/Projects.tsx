@@ -110,7 +110,11 @@ const projects: Projects = [
     name: "SCIENTIFIC CALCULATOR",
     description:
       "Has the basic functionalities of a calculator as well as some extra features!",
+<<<<<<< HEAD
     status: [ProjectStatus.FEATURED],
+=======
+    status: [ProjectStatus.ARCHIVED],
+>>>>>>> 2f7d59b59d83d69ba78a4c7cd734c867db3acad6
     type: ProjectType.FRONTENDONLY,
     website: "https://christopher-alba.github.io/calculator/",
     tags: ["HTML", "CSS", "Javascript", "jQuery"],
@@ -127,7 +131,11 @@ const projects: Projects = [
   {
     name: "PVP CHESS",
     description: "A working chess game with computer assists.",
+<<<<<<< HEAD
     status: [ProjectStatus.FEATURED],
+=======
+    status: [ProjectStatus.ARCHIVED],
+>>>>>>> 2f7d59b59d83d69ba78a4c7cd734c867db3acad6
     type: ProjectType.FRONTENDONLY,
     website: "https://christopher-alba.github.io/chess/",
     tags: ["HTML", "CSS", "Javascript", "jQuery"],
@@ -144,7 +152,11 @@ const projects: Projects = [
   {
     name: "WHACK-A-MOLE",
     description: "Click on the moles as they appear to earn points!",
+<<<<<<< HEAD
     status: [ProjectStatus.FEATURED],
+=======
+    status: [ProjectStatus.ARCHIVED],
+>>>>>>> 2f7d59b59d83d69ba78a4c7cd734c867db3acad6
     type: ProjectType.FRONTENDONLY,
     website:
       "https://christopher-alba.github.io/javascript-carnival/whack-a-mole/whack-a-mole.html",
@@ -298,6 +310,7 @@ const Project: FC<{ project: Project }> = ({ project }) => {
           })}
         </ProjectStatusWrapper>
         <p>{project.description}</p>
+<<<<<<< HEAD
         {(project.website?.length || -1) > 0 && (
           <a href={project.website} target="_blank" rel="noopener noreferrer">
             <TertiaryButton
@@ -334,6 +347,32 @@ const Project: FC<{ project: Project }> = ({ project }) => {
             </PlainButton>
           </a>
         ))}
+=======
+        <a href={project.website} target="_blank" rel="noopener noreferrer">
+          <TertiaryButton
+            tabIndex={-1}
+            style={{ width: "100px", marginRight: "10px", marginTop: "10px" }}
+          >
+            Visit
+          </TertiaryButton>
+          {project.github.map((githubObj) => (
+            <a href={githubObj.url} target="_blank" rel="noopener noreferrer">
+              <PlainButton
+                style={{
+                  marginTop: "10px",
+                  marginRight: "10px",
+                }}
+              >
+                <FontAwesomeIcon
+                  icon={faGithub}
+                  style={{ marginRight: "10px" }}
+                />
+                Github - {githubObj.type}
+              </PlainButton>
+            </a>
+          ))}
+        </a>
+>>>>>>> 2f7d59b59d83d69ba78a4c7cd734c867db3acad6
         <StyledHR />
         <TagsWrapperWrapper>
           <TagsWrapperOuter>
@@ -377,13 +416,22 @@ const Projects: FC = () => {
           .map((project) => {
             return <Project project={project} />;
           })}
+<<<<<<< HEAD
         <SubTitle>
+=======
+        {/* <SubTitle>
+>>>>>>> 2f7d59b59d83d69ba78a4c7cd734c867db3acad6
           <FontAwesomeIcon
             icon={faThumbsUp}
             style={{ marginRight: "10px", fontSize: "2rem" }}
           />
+<<<<<<< HEAD
           Old and New Projects That Still Work
         </SubTitle>
+=======
+          Projects I'm Maintaining and Completed to an MVP
+        </SubTitle> */}
+>>>>>>> 2f7d59b59d83d69ba78a4c7cd734c867db3acad6
         {projects
           .filter((project) => project.status.includes(ProjectStatus.FEATURED))
           .map((project) => {
@@ -394,7 +442,11 @@ const Projects: FC = () => {
             icon={faFolderClosed}
             style={{ marginRight: "10px", fontSize: "2rem" }}
           />
+<<<<<<< HEAD
           Old Projects No Longer Maintained
+=======
+          Projects I'm No Longer Working On
+>>>>>>> 2f7d59b59d83d69ba78a4c7cd734c867db3acad6
         </SubTitle>
         {projects
           .filter((project) => project.status.includes(ProjectStatus.ARCHIVED))
