@@ -21,6 +21,7 @@ import {
   MenuMain,
   NavbarWrapper,
   StyledNumber,
+  BrandWrapper,
 } from "./styled";
 import themes from "../../themes/schema.json";
 const Navbar: FC<{
@@ -84,7 +85,9 @@ const Navbar: FC<{
   return (
     <NavbarWrapper id="navbar">
       <MainDiv>
-        <Brand onClick={scrollToLanding}>{"<CSA/>"}</Brand>
+        <BrandWrapper>
+          <Brand onClick={scrollToLanding}>{"<CSA/>"}</Brand>
+        </BrandWrapper>
         <RightDiv>
           <SectionButtonsWrapper>
             <SectionButton onClick={scrollToAbout}>

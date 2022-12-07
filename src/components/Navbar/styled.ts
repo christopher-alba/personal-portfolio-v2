@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ReactComponent as SVG } from "../../svg/brand.svg";
 
 export const NavbarWrapper = styled("div")`
   position: fixed;
@@ -19,13 +20,24 @@ export const MainDiv = styled("div")`
   }
 `;
 
-export const Brand = styled("button")`
+export const Brand = styled(SVG)`
   color: ${({ theme }) => theme.colors.tertiaryMain};
   letter-spacing: 10px;
   background: none;
   border: none;
-  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
+  transition: 500ms;
   cursor: pointer;
+  &:hover {
+    color: ${({ theme }) => theme.colors.tertiaryHover};
+    transform: scale(1.3);
+    position: absolute;
+  }
+`;
+
+export const BrandWrapper = styled("div")`
+  height: 55px;
 `;
 
 export const RightDiv = styled("div")`
