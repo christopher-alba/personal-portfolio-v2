@@ -302,7 +302,7 @@ const Project: FC<{ project: Project }> = ({ project }) => {
           <a href={project.website} target="_blank" rel="noopener noreferrer">
             <TertiaryButton
               tabIndex={-1}
-              style={{ width: "100px", marginRight: "10px", marginTop: "10px" }}
+              style={{ minWidth: "100px", marginRight: "10px", marginTop: "10px" }}
             >
               Visit
             </TertiaryButton>
@@ -312,7 +312,7 @@ const Project: FC<{ project: Project }> = ({ project }) => {
           <a href={project.download} target="_blank" rel="noopener noreferrer">
             <TertiaryButton
               tabIndex={-1}
-              style={{ width: "100px", marginRight: "10px", marginTop: "10px" }}
+              style={{ minWidth: "100px", marginRight: "10px", marginTop: "10px" }}
             >
               Download
             </TertiaryButton>

@@ -103,3 +103,8 @@ export const MenuMain = styled("div")`
   flex-direction: column;
   background: ${({ theme }) => theme.colors.primaryMain};
 `;
+
+export const StyledNumber = styled("span")`
+  color: ${({ theme }) => theme.colors.tertiaryMain};
+  font-weight: 700;
+`;
