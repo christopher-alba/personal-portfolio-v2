@@ -17,36 +17,45 @@ export type OptionsAndContents = {
   }[];
 };
 
-const SelectAndDisplay: FC<{ optionsAndContents: OptionsAndContents }> = ({
-  optionsAndContents,
-}) => {
+const SelectAndDisplay: FC<{
+  optionsAndContents: OptionsAndContents;
+  optionsMinWidth: string;
+}> = ({ optionsAndContents, optionsMinWidth }) => {
   const [currentID, setCurrentID] = useState(
-    optionsAndContents.options[0].name
+    optionsAndContents.options?.[0]?.name
   );
   useEffect(() => {
-    const bar = document.getElementById(
-      "selectAndDisplay-options-sliderBar"
-    ) as any;
+    const id = optionsAndContents.options.reduce(
+      (prev, current) => prev + current.name,
+      ""
+    );
+    const bar = document.getElementById(id) as any;
     const targetElement = document.getElementById(
       optionsAndContents.options.find((option) => option.name === currentID)
         ?.name || ""
     ) as any;
 
-    bar.style.top = targetElement.offsetTop + "px";
-
-    bar.style.height = targetElement.offsetHeight + "px";
+    if (bar && targetElement) {
+      bar.style.top = targetElement.offsetTop + "px";
+      bar.style.height = targetElement.offsetHeight + "px";
+    }
   }, [currentID]);
   const changeID = (ID: string) => {
     setCurrentID(ID);
   };
   return (
     <MainDiv>
-      <OptionsDiv>
+      <OptionsDiv minWidth={optionsMinWidth}>
         <OptionSlider>
-          <OptionsSliderBar id="selectAndDisplay-options-sliderBar" />
+          <OptionsSliderBar
+            id={optionsAndContents?.options?.reduce(
+              (prev, current) => prev + current.name,
+              ""
+            )}
+          />
         </OptionSlider>
         <OptionsWrapper>
-          {optionsAndContents.options.map((option) => {
+          {optionsAndContents?.options?.map((option) => {
             if (option.name === currentID) {
               return (
                 <SelectedOptionDiv
@@ -76,8 +85,9 @@ const SelectAndDisplay: FC<{ optionsAndContents: OptionsAndContents }> = ({
       </OptionsDiv>
       <ContentDiv>
         {
-          optionsAndContents.options.find((option) => option.name === currentID)
-            ?.content
+          optionsAndContents?.options?.find(
+            (option) => option.name === currentID
+          )?.content
         }
       </ContentDiv>
     </MainDiv>
