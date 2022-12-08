@@ -8,8 +8,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "storybook": "set NODE_OPTIONS=\"--openssl-legacy-provider\" && start-storybook -p 6006",
-    "build-storybook": "set NODE_OPTIONS=\"--openssl-legacy-provider\" && build-storybook",
-    "build-static-webapp":"set NODE_OPTIONS=\"--openssl-legacy-provider\" && expo build:web"
+    "build-storybook": "set NODE_OPTIONS=\"--openssl-legacy-provider\" && build-storybook"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
