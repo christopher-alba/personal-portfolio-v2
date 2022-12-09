@@ -10,6 +10,7 @@ import Journey from "./sections/Journey";
 import Projects from "./sections/Projects";
 import Footer from "./components/Footer";
 import Education from "./sections/Education";
+import Contact from "./sections/Contact";
 
 const App = () => {
   const [selectedTheme, setSelectedTheme] = useState(themes.dark);
@@ -24,6 +25,7 @@ const App = () => {
       <Journey />
       <Projects />
       <Education />
+      <Contact />
       <Footer />
     </ThemeProvider>
   );
