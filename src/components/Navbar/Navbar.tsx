@@ -53,34 +53,22 @@ const Navbar: FC<{
     }
   };
   const scrollToLanding = () => {
-    document.getElementById("landing")?.scrollIntoView({
-      behavior: "smooth",
-    });
+    document.getElementById("landing")?.scrollIntoView();
   };
   const scrollToAbout = () => {
-    document.getElementById("about")?.scrollIntoView({
-      behavior: "smooth",
-    });
+    document.getElementById("about")?.scrollIntoView();
   };
   const scrollToJourney = () => {
-    document.getElementById("journey")?.scrollIntoView({
-      behavior: "smooth",
-    });
+    document.getElementById("journey")?.scrollIntoView();
   };
   const scrollToProjects = () => {
-    document.getElementById("projects")?.scrollIntoView({
-      behavior: "smooth",
-    });
+    document.getElementById("projects")?.scrollIntoView();
   };
   const scrollToEducation = () => {
-    document.getElementById("education")?.scrollIntoView({
-      behavior: "smooth",
-    });
+    document.getElementById("education")?.scrollIntoView();
   };
   const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({
-      behavior: "smooth",
-    });
+    document.getElementById("contact")?.scrollIntoView();
   };
   return (
     <NavbarWrapper id="navbar">
