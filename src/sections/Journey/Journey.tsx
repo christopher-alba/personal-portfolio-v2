@@ -340,7 +340,10 @@ const Journey: FC = () => {
     <MainDiv id="journey">
       <Container>
         <SectionTitle number={1} title="My Journey in Tech" />
-        <SelectAndDisplay optionsAndContents={selectOptions} />
+        <SelectAndDisplay
+          optionsAndContents={selectOptions}
+          optionsMinWidth="300px"
+        />
       </Container>
     </MainDiv>
   );

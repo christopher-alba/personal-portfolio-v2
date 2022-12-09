@@ -20,6 +20,8 @@ import {
   MenuButton,
   MenuMain,
   NavbarWrapper,
+  StyledNumber,
+  BrandWrapper,
 } from "./styled";
 import themes from "../../themes/schema.json";
 const Navbar: FC<{
@@ -83,21 +85,25 @@ const Navbar: FC<{
   return (
     <NavbarWrapper id="navbar">
       <MainDiv>
-        <Brand onClick={scrollToLanding}>{"<CSA/>"}</Brand>
+        <BrandWrapper>
+          <Brand onClick={scrollToLanding}>{"<CSA/>"}</Brand>
+        </BrandWrapper>
         <RightDiv>
           <SectionButtonsWrapper>
-            <SectionButton onClick={scrollToAbout}>{"[0]About"}</SectionButton>
+            <SectionButton onClick={scrollToAbout}>
+              <StyledNumber>[0]</StyledNumber> About
+            </SectionButton>
             <SectionButton onClick={scrollToJourney}>
-              {"[1]Journey"}
+              <StyledNumber>[1]</StyledNumber> Journey
             </SectionButton>
             <SectionButton onClick={scrollToProjects}>
-              {"[2]Projects"}
+              <StyledNumber>[2]</StyledNumber> Projects
             </SectionButton>
             <SectionButton onClick={scrollToEducation}>
-              {"[3]Education"}
+              <StyledNumber>[3]</StyledNumber> Education
             </SectionButton>
             <SectionButton onClick={scrollToContact}>
-              {"[4]Contact"}
+              <StyledNumber>[4]</StyledNumber> Contact
             </SectionButton>
           </SectionButtonsWrapper>
           <ToggleThemeButton onClick={toggleTheme}>theme</ToggleThemeButton>
@@ -108,18 +114,20 @@ const Navbar: FC<{
       </MainDiv>
       {menuOn && width <= 1300 && (
         <MenuMain>
-          <SectionButton onClick={scrollToAbout}>{"[0]About"}</SectionButton>
+          <SectionButton onClick={scrollToAbout}>
+            <StyledNumber>[0]</StyledNumber> About
+          </SectionButton>
           <SectionButton onClick={scrollToJourney}>
-            {"[1]Journey"}
+            <StyledNumber>[1]</StyledNumber> Journey
           </SectionButton>
           <SectionButton onClick={scrollToProjects}>
-            {"[2]Projects"}
+            <StyledNumber>[2]</StyledNumber> Projects
           </SectionButton>
           <SectionButton onClick={scrollToEducation}>
-            {"[3]Education"}
+            <StyledNumber>[3]</StyledNumber> Education
           </SectionButton>
           <SectionButton onClick={scrollToContact}>
-            {"[4]Contact"}
+            <StyledNumber>[4]</StyledNumber> Contact
           </SectionButton>
         </MenuMain>
       )}

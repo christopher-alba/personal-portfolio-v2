@@ -2,15 +2,16 @@ import styled from "styled-components";
 
 export const MainDiv = styled("div")`
   display: flex;
-  margin-top: 20px;
   @media (max-width: 800px) {
     flex-direction: column;
   }
 `;
-
-export const OptionsDiv = styled("div")`
+interface IOptionsDiv {
+  minWidth: string;
+}
+export const OptionsDiv = styled("div")<IOptionsDiv>`
   flex-shrink: 1;
-  min-width: 300px;
+  min-width: ${({ minWidth }) => minWidth};
   height: fit-content;
   padding-right: 50px;
   position: relative;
@@ -22,8 +23,8 @@ export const OptionsDiv = styled("div")`
 `;
 export const OptionsWrapper = styled("div")`
   width: 90%;
-  @media(max-width:800px){
-    width:100%;
+  @media (max-width: 800px) {
+    width: 100%;
   }
 `;
 export const ContentDiv = styled("div")`
@@ -34,7 +35,6 @@ export const OptionDiv = styled("div")`
   width: 100%;
   padding: 20px;
   font-size: 1.1rem;
-  width: 100%;
   cursor: pointer;
   &:hover {
     background: ${({ theme }) =>
