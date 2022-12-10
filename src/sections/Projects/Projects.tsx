@@ -80,7 +80,8 @@ const projects: Projects = [
     imgSrc: "/images/valkyrion.png",
     devices: [Devices.DESKTOP],
     year: 2022,
-    download: "https://drive.google.com/file/d/1J3sGEVvUePL1iojAf0bDioAhTXOHsmcy/view?usp=sharing",
+    download:
+      "https://drive.google.com/file/d/1J3sGEVvUePL1iojAf0bDioAhTXOHsmcy/view?usp=sharing",
     github: [
       {
         url: "https://github.com/christopher-alba/Valkyrion",
@@ -163,7 +164,7 @@ const projects: Projects = [
     name: "E-CommerceV5",
     description:
       "This is a small scale ecommerce site that allows users to browse products and add them to a shopping cart. Admins can create, update, and delete products in the shop route. To access an admin account, login using username: admin, and password: admin. This site also features a light mode theme and dark mode theme, controlled by a switch.",
-    status: [ProjectStatus.ARCHIVED, ProjectStatus.SERVERNOLONGERDEPLOYED],
+    status: [ProjectStatus.FEATURED],
     type: ProjectType.FRONTENDBACKEND,
     website: "https://ecommercev5.netlify.app/",
     tags: [
@@ -210,7 +211,7 @@ const projects: Projects = [
       "MongoDB",
       "Mongoose",
     ],
-    status: [ProjectStatus.ARCHIVED, ProjectStatus.SERVERNOLONGERDEPLOYED],
+    status: [ProjectStatus.FEATURED],
     devices: [Devices.DESKTOP, Devices.TABLET, Devices.MOBILE],
     type: ProjectType.FRONTENDBACKEND,
     imgSrc: "./images/finance.png",
@@ -302,7 +303,11 @@ const Project: FC<{ project: Project }> = ({ project }) => {
           <a href={project.website} target="_blank" rel="noopener noreferrer">
             <TertiaryButton
               tabIndex={-1}
-              style={{ minWidth: "100px", marginRight: "10px", marginTop: "10px" }}
+              style={{
+                minWidth: "100px",
+                marginRight: "10px",
+                marginTop: "10px",
+              }}
             >
               Visit
             </TertiaryButton>
@@ -312,7 +317,11 @@ const Project: FC<{ project: Project }> = ({ project }) => {
           <a href={project.download} target="_blank" rel="noopener noreferrer">
             <TertiaryButton
               tabIndex={-1}
-              style={{ minWidth: "100px", marginRight: "10px", marginTop: "10px" }}
+              style={{
+                minWidth: "100px",
+                marginRight: "10px",
+                marginTop: "10px",
+              }}
             >
               Download
             </TertiaryButton>
@@ -363,13 +372,17 @@ const Projects: FC = () => {
     <MainDiv id="projects">
       <Container>
         <SectionTitle title="My Personal Projects" number={2} />
-        <SubTitle>
-          <FontAwesomeIcon
-            icon={faScrewdriverWrench}
-            style={{ marginRight: "10px", fontSize: "2rem" }}
-          />
-          Projects I'm Currently Working On
-        </SubTitle>
+        {projects.filter((project) =>
+          project.status.includes(ProjectStatus.UNDERCONSTRUCTION)
+        ).length > 0 && (
+          <SubTitle>
+            <FontAwesomeIcon
+              icon={faScrewdriverWrench}
+              style={{ marginRight: "10px", fontSize: "2rem" }}
+            />
+            Projects I'm Currently Working On
+          </SubTitle>
+        )}
         {projects
           .filter((project) =>
             project.status.includes(ProjectStatus.UNDERCONSTRUCTION)
@@ -377,25 +390,33 @@ const Projects: FC = () => {
           .map((project) => {
             return <Project project={project} />;
           })}
-        <SubTitle>
-          <FontAwesomeIcon
-            icon={faThumbsUp}
-            style={{ marginRight: "10px", fontSize: "2rem" }}
-          />
-          Old and New Projects That Still Work
-        </SubTitle>
+        {projects.filter((project) =>
+          project.status.includes(ProjectStatus.FEATURED)
+        ).length > 0 && (
+          <SubTitle>
+            <FontAwesomeIcon
+              icon={faThumbsUp}
+              style={{ marginRight: "10px", fontSize: "2rem" }}
+            />
+            Old and New Projects That Still Work
+          </SubTitle>
+        )}
         {projects
           .filter((project) => project.status.includes(ProjectStatus.FEATURED))
           .map((project) => {
             return <Project project={project} />;
           })}
-        <SubTitle>
-          <FontAwesomeIcon
-            icon={faFolderClosed}
-            style={{ marginRight: "10px", fontSize: "2rem" }}
-          />
-          Old Projects No Longer Maintained
-        </SubTitle>
+        {projects.filter((project) =>
+          project.status.includes(ProjectStatus.ARCHIVED)
+        ).length > 0 && (
+          <SubTitle>
+            <FontAwesomeIcon
+              icon={faFolderClosed}
+              style={{ marginRight: "10px", fontSize: "2rem" }}
+            />
+            Old Projects No Longer Maintained
+          </SubTitle>
+        )}
         {projects
           .filter((project) => project.status.includes(ProjectStatus.ARCHIVED))
           .map((project) => {
